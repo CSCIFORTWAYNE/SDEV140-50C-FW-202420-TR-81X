@@ -13,6 +13,7 @@ int main()
     {
         std::cout << "The number entered is not between 0 and 10." << std::endl;
     }
+    for (int x = 0; x < 4; x++)
 
-    return 0;
+        return 0;
 }
