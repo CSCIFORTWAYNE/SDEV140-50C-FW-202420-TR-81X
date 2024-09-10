@@ -6,3 +6,10 @@
 315
 421
 846
+
+
+ The Flesch Index is 72.80706451612906
+          The Grade Level Equivalent is 6
+          5 sentences
+          62 words
+          89 syllables

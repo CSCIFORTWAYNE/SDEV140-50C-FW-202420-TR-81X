@@ -11,7 +11,9 @@ for day in range(1, count+1):
     if cal in calData:
             print(cal, " already in list.")
 
-    calData += [cal]
+    calData.append(cal)
+    sum += cal
+    #calData += [cal]
     #calData[day-1] = cal
 print(calData)
 for item in calData:
@@ -20,5 +22,6 @@ for item in calData:
 for index in range(len(calData)):
      calData[index] = calData[index] * 2
 print(calData)
+print(f"The average number of calories burned is {sum/len(calData):f}")
 
 
