@@ -1,0 +1,42 @@
+Apples
+31.16
+Bananas
+27.22
+Carrots
+23.67
+Bread
+55.38
+Milk
+16.76
+Eggs
+10.59
+Chicken breasts
+57.93
+Rice
+63.00
+Pasta
+41.27
+Canned tomatoes
+100.49
+Cheese
+23.79
+Yogurt
+10.26
+Lettuce
+51.10
+Onions
+25.83
+Potatoes
+87.92
+Coffee
+81.61
+Tea
+78.00
+Olive oil
+15.96
+Sugar
+93.39
+Salt
+43.28
+Flour
+3.96
