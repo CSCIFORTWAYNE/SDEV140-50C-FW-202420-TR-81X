@@ -41,7 +41,7 @@ def readProgramGPA(studentIds):
     f = open('studentlist.txt', 'r')
     for line in f:
         data = line.split()
-        i = findStudentById(data[0], studentIds)
+        i = findStudentById(studentIds= studentIds, id= data[0])
         if i != -1:
             programs[i] = getProgram(data[1])
             gpas[i] = float(data[2])
