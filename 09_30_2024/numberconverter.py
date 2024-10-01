@@ -1,4 +1,5 @@
 """number converter program"""
+from binaryNum import BinaryNum
 
 def main():
     choice = int(input("Choose a conversion:\n1. Binary to Decimal\n2. Decimal to Binary\n3. Hexadecimal to Binary\n4. Binary to Hexadecimal\n5. Exit\n"))
@@ -7,7 +8,17 @@ def main():
         if choice == 1:
             binaryNum = input("Enter a binary string: ")
             binaryNum = binaryNum.strip('-')
-            nonBinary = False
+            try:
+                binaryNum = BinaryNum(binaryNum)
+                
+            except ValueError as e:
+                print(e)
+                continue
+            else:
+                decimalNum = binaryNum.binaryToDecimal()
+                print("%0s in decimal is %0d" %(binaryNum,decimalNum))
+            
+            """ nonBinary = False
             if binaryNum.isnumeric():
                 for digit in nonBinaryDigits:
                     if binaryNum.count(digit) > 0:
@@ -20,7 +31,7 @@ def main():
                 print("%0s in decimal is %0d" %(binaryNum,decimalNum))
             else:
                 print("Error the information entered contains invalid characters.")
-                continue
+                continue """
         elif choice == 2:
             try:
                 decimalNum = float(input("Enter a decimal: "))
@@ -36,14 +47,15 @@ def main():
                         break
                 if nonDigit:
                     continue """
-            except ValueError:
+            except ValueError as e:
+                print(e)
                 print("The input is not a number")
                 continue
-            except err as Exception:
+            except Exception as err:
                 print(err)
             else:
                 binaryNum = decimalToBinary(decimalNum)
-                print("%0s in binary is %0s" %(decimalNum,binaryNum))
+                print(f"{decimalNum:f} in binary is {binaryNum}")
             finally:
                 print("finally")
         elif choice == 3:
@@ -62,26 +74,24 @@ def main():
         elif choice == 4:
             binaryNum = input("Enter a binary string: ")
             binaryNum = binaryNum.strip('-')
-            nonBinary = False
-            if binaryNum.isnumeric():
-                for character in binaryNum:
-                    if not character in ["0", "1"]:
-                        nonBinary = True
-                        break
-                if nonBinary:
-                    print("Error the information entered contains invalid characters.")
-                    continue
-                hexNum = binaryToHex(binaryNum)
-                print(f"{binaryNum:s} in hexadecimal is {hexNum:s}")
-            else:
-                print("Error the information entered contains invalid characters.")
+            try:
+                binaryNum = BinaryNum(binaryNum)
+            except ValueError as e:
+                print(e)
                 continue
+            else:
+                hexNum = binaryNum.binaryToHex()
+                print(f"{binaryNum:s} in hexadecimal is {hexNum:s}")
+            
 
             
         elif choice == 5:
             break
         choice = int(input("Choose a conversion:\n1. Binary to Decimal\n2. Decimal to Binary\n3. Hexadecimal to Binary\n4. Binary to Hexadecimal\n5. Exit\n"))
-
+    b1 = BinaryNum("1011")
+    b2 = BinaryNum("101")
+    ans = b1 + b2
+    print(ans)
     
 
 def binaryToDecimal(binaryNum:str):
